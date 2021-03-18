@@ -1,0 +1,23 @@
+schema: schema.docs.graphql
+  # - https://api.github.com/graphql:
+  #     headers:
+  #       authorization: Bearer yourtoken or ${ENVIRONMENT_VARIABLE_FOR_TOKEN}
+documents: 'src/graphql/**/*.ts'
+generates:
+  # ./src/graphql-types.d.ts:
+  #   plugins:
+  #     - typescript
+  #     - typescript-operations
+  src/types/graphql.ts:
+  preset: import-types
+  presetConfig:
+    typesPath: types.ts
+  plugins:
+    - typescript-operations
+  # src/:
+  #   preset: import-types
+  #   presetConfig:
+  #     typesPath: types.ts
+  #     importTypesNamespace: SchemaTypes
+  #   plugins:
+  #     - typescript-operations
