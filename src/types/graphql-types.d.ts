@@ -20313,17 +20313,3 @@ export type ViewerHovercardContext = HovercardContext & {
   viewer: User;
 };
 
-
-export type GetRespositoryQueryVariables = Exact<{
-  owner: Scalars['String'];
-  name: Scalars['String'];
-}>;
-
-
-export type GetRespositoryQuery = (
-  { __typename?: 'Query' }
-  & { repository?: Maybe<(
-    { __typename?: 'Repository' }
-    & Pick<Repository, 'name' | 'nameWithOwner'>
-  )> }
-);
